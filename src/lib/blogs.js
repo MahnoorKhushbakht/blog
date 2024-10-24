@@ -1,7 +1,7 @@
 import qs from 'qs';
 
 export async function getBlogs() {
-    const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
+    const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
     const url = `${CMS_URL}/api/blogs?` + qs.stringify({
         fields: ['slug', 'title', 'publishedAt', 'details','subtitle'],
         populate: { image: { fields: ['url'] }},
@@ -28,7 +28,7 @@ export async function getBlogs() {
 
 
 export async function getBlog(slug,type) {
-    const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
+    const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
     const url = `${CMS_URL}/api/${type}?` + qs.stringify({
         filters: { slug: { $eq: slug } },
         fields: ['slug', 'title', 'publishedAt', 'details','subtitle'],
@@ -57,7 +57,7 @@ export async function getBlog(slug,type) {
 // https://strapicms-production-f0e2.up.railway.app/api/categories
 
 export async function getCategories(){
-    const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
+    const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
     const url = `${CMS_URL}/api/categories?` + qs.stringify({
         fields: ['slug', 'Name','highlight'],
         populate: { image: { fields: ['url'] }},
@@ -79,7 +79,7 @@ export async function getCategories(){
 
 
 // export async function getCategory(slug){
-//     const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
+//     const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 //     const url = `${CMS_URL}/api/` + qs.stringify({
 //         fields: ['slug', 'Name','highlight'],
 //         populate: { image: { fields: ['url'] }},
@@ -101,7 +101,7 @@ export async function getCategories(){
 // https://strapicms-production-f0e2.up.railway.app/api/bloggs?categories=food
 
 export async function getCategory(slug){
-    const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
+    const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
     const url = `${CMS_URL}/api/${slug}?` + qs.stringify({
         fields: ['slug', 'title', 'publishedAt', 'details','subtitle'],
         populate: { image: { fields: ['url'] }},
