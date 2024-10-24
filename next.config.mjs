@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['localhost', 'http://localhost:1337/'], // Add your external domains here
-      },
+  images: {
+    domains: ['strapicms-production-f0e2.up.railway.app'],
+  },
 };
-
-  
 
 export default nextConfig;

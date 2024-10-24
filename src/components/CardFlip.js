@@ -15,7 +15,7 @@ export default function CardFlip({ item, index }) {
     if (!isFlipped) {
       setTimeout(() => {
         setIsFlipped(false);
-      }, 1000);
+      }, 3000);
     }
   };
 
