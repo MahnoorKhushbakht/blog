@@ -39,7 +39,7 @@ export default async function CardInfo() {
                 <Image
                   isBlurred
                   alt={item.name}
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl md:p-0 p-5"
                   src={item.image}
                   width={270}
                   height={180}

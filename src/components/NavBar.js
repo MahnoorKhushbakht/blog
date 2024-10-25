@@ -1,14 +1,13 @@
 'use client'
 import {SearchIcon} from "./SearchIcon.js";
+import { Image } from "@nextui-org/react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem,Input, Link, Button} from "@nextui-org/react";
-import {Logo} from "./Logo.js";
 
 export default function App() {
   return (
     <Navbar className="bg-red-300 shadow-2xl static shadow-red-300/10">
       <NavbarBrand>
-        <Logo />
-        <p className="font-bold text-inherit">ACME</p>
+        <p className="font-bold text-inherit">Echoes of Thought</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
       <NavbarItem>
