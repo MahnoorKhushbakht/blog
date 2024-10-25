@@ -22,7 +22,7 @@ export default async function CardInfo() {
       </div>
       <div className="w-auto h-auto grid grid-cols-1 gap-5 mt-20 md:hidden">
         {cardData.map((item, index) => (
-          <Card className="w-96 h-auto py-4" key={index}>
+          <Card className="w-auto h-auto py-4" key={index}>
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
               <div className="flex items-center space-x-2">
               <p className="text-tiny text-red-400 uppercase font-bold">{item.name}</p>
