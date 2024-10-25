@@ -27,9 +27,9 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextUIProvider>
           <header>
-            <NavBar /> {/* Integrate the Navbar */}
+            <NavBar /> 
           </header>
-          <main>{children}</main> {/* Render page content */}
+          <main>{children}</main> 
           <footer>
             <Footer/>
           </footer>
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
         {/* Chatbot Script */}
         <Script
           id="chatbot-config"
-          strategy="beforeInteractive" // Ensures script loads before page is interactive
+          strategy="beforeInteractive" 
           dangerouslySetInnerHTML={{
             __html: `
               window.embeddedChatbotConfig = {
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
         />
         <Script
           src="https://www.chatbase.co/embed.min.js"
-          strategy="lazyOnload" // Loads script after the page has loaded
+          strategy="lazyOnload" 
           chatbotId="ag4drrJ3i6JOgI03LnD2g"
           domain="www.chatbase.co"
           defer
