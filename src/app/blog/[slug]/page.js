@@ -11,10 +11,10 @@ export default async function Blog({ params: { slug } }) {
     const data = await getCategory(slug)
    const name =slug;
     return (
-        <div className='bg-red-100 grid grid-cols-1 grid-rows-3 min-h-svh min-w-svw place-content-center place-items-center md:p-0 p-10'>
-            <Background />
+        <div className='bg-red-400 grid grid-cols-1 grid-rows-3 min-h-svh min-w-svw md:p-0 p-10'>
+            {/* <Background /> */}
             
-            {data.map((item, index) => (
+            {/* {data.map((item, index) => (
                 <div key={index} className="w-full sm:w-auto md:w-3/5 mx-0 sm:pl-5 sm:mr-5 h-auto border-2 border-red-400 rounded-md md:mt-10 mt-5 p-6 shadow-md grid md:grid-cols-2 grid-cols-1 place-content-center place-items-center">
                     <Suspense fallback={<ImgSuspense />}>
                         <Image
@@ -35,7 +35,27 @@ export default async function Blog({ params: { slug } }) {
       </Button> 
       </div>
                 </div>
-            ))}
+            ))} */}
+{data.map((item, index) => (
+<section key={index} class="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-5 md:mr-10 mr-5  body-font overflow-hidden">
+      <div class="py-8 flex flex-wrap md:flex-nowrap">
+        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <span class="font-semibold title-font text-white uppercase">{item.title}</span>
+          <span class="text-sm text-white">{item.date}</span>
+        </div>
+        <div class="md:flex-grow">
+          <h2 class="text-2xl font-medium text-white title-font mb-2">{item.subtitle}</h2>
+          <p class="leading-relaxed text-white line-clamp-2">{item.details}</p>
+          <a class="text-white inline-flex items-center mt-4"  href={`/details/${name}/${item.slug}`}>Learn More
+            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+</section>
+ ))}
         </div>
     );
 }
