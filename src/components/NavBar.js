@@ -1,43 +1,21 @@
-'use client'
-import {SearchIcon} from "./SearchIcon.js";
-import { Image } from "@nextui-org/react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem,Input, Link, Button} from "@nextui-org/react";
+'use client';
+import Image from "next/image";
 
 export default function App() {
   return (
-    <Navbar className="bg-red-300 shadow-2xl static shadow-red-300/10">
-      <NavbarBrand>
-        <p className="font-bold text-inherit">Echoes of Thought</p>
-      </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-      <NavbarItem>
-          <Link className="text-white text-lg" href="/">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-white text-lg" href="/blog">
-            Blogs
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem>
-        <Input
-          classNames={{
-            base: "max-w-full sm:max-w-[10rem] h-10",
-            mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper: "h-full font-normal text-red-400 bg-white",
-          }}
-          placeholder="Search..."
-          size="sm"
-          startContent={<SearchIcon size={18} />}
-          type="search"
-          className="text-white" 
-        />
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+    <header className="text-gray-600 body-font bg-red-300">
+      <div className="container mx-auto flex justify-center items-center p-5">
+        <a className="flex title-font font-medium items-center">
+          <Image
+            src="/images/eot-logo.png"  
+            alt="Your Alt Text"
+            width={40}  
+            height={40} 
+            className="rounded-full bg-white"
+          />
+          <span className="ml-3 text-xl text-white">Echoes of Thought</span>
+        </a>
+      </div>
+    </header>
   );
 }

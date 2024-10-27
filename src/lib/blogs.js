@@ -125,3 +125,32 @@ export async function getCategory(slug){
         image: CMS_URL + blog.image.url,
     }));
 }
+
+
+
+export async function getSearchData() {
+  const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+
+  const url = `${CMS_URL}/api/categories?` +
+    '&' + qs.stringify({
+      fields: ['slug', 'title'],
+      sort: ['publishedAt:desc'],
+    }, { encodeValuesOnly: true });
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+
+  const json = await response.json();
+  const { data } = json;
+
+  return data.map((blog) => ({
+    slug: blog.attributes.slug, // Ensure to access attributes correctly
+    title: blog.attributes.title,
+  }));
+}
+
+
+
+// https://strapicms-production-f0e2.up.railway.app/api/categories?filters[slug][$contains]=foods
