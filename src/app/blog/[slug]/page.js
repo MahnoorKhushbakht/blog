@@ -37,7 +37,7 @@ export default async function Blog({ params: { slug } }) {
                 </div>
             ))} */}
 {data.map((item, index) => (
-<section key={index} class="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-5 md:mr-10 mr-5  body-font overflow-hidden">
+<section key={index} class="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-0 md:mr-10 mr-5  body-font overflow-hidden">
       <div class="py-8 flex flex-wrap md:flex-nowrap">
         <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
           <span class="font-semibold title-font text-white uppercase">{item.title}</span>
