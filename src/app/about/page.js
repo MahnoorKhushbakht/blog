@@ -1,4 +1,4 @@
-export default function AboutPage() {
+export default function About() {
     return (
         <div className="bg-red-400 p-10 bg-cover flex flex-col justify-center h-auto ">
             
