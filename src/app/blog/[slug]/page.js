@@ -11,7 +11,7 @@ export default async function Blog({ params: { slug } }) {
     const data = await getCategory(slug)
    const name =slug;
     return (
-        <div className='bg-red-400 grid grid-cols-1 grid-rows-3 min-h-svh min-w-svw md:p-0 p-10'>
+        <div className='bg-red-400 grid grid-cols-1 grid-rows-3 min-h-svh min-w-svw md:p-0 p-10 place-content-center place-items-center '>
             {/* <Background /> */}
             
             {/* {data.map((item, index) => (
@@ -37,11 +37,11 @@ export default async function Blog({ params: { slug } }) {
                 </div>
             ))} */}
 {data.map((item, index) => (
-<section key={index} class="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-0 md:mr-10 mr-5  body-font overflow-hidden">
+<section key={index} class="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-0 md:mr-10 mr-0 body-font overflow-hidden">
       <div class="py-8 flex flex-wrap md:flex-nowrap">
         <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
           <span class="font-semibold title-font text-white uppercase">{item.title}</span>
-          <span class="text-sm text-white">{item.date}</span>
+          <span class="text-sm text-red-200 ">{item.date}</span>
         </div>
         <div class="md:flex-grow">
           <h2 class="text-2xl font-medium text-white title-font mb-2">{item.subtitle}</h2>
@@ -54,7 +54,9 @@ export default async function Blog({ params: { slug } }) {
           </a>
         </div>
       </div>
+      {index < data.length - 1 && <hr className="border-red-200 my-4 mx-auto w-full sm:w-auto md:w-3/4" />}
 </section>
+
  ))}
         </div>
     );
