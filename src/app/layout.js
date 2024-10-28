@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
           </header>
           <main>{children}</main> 
           <footer>
-            <Footer/>
+            {/* <Footer/> */}
           </footer>
         </NextUIProvider>
 

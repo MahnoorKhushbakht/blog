@@ -2,7 +2,7 @@ export default function About() {
     return (
         <div className="bg-red-400 p-10 bg-cover flex flex-col justify-center h-auto ">
             
-            {/* <div spacing={1} align="start" px={4} className="mt-5 mb-5">
+            <div spacing={1} align="start" px={4} className="mt-5 mb-5">
                 <h2 className='text-lg md:text-xl antialiased font-bold text-red-100'>About Us:</h2>
                 <p className="text-sm md:text-base text-white">
                     Welcome to Echoes of Thoughts, a digital haven where ideas, stories, and perspectives converge. Our platform is dedicated to inspiring curiosity, sparking conversations, and sharing knowledge on topics that matter. We believe in the power of words to transform lives and broaden minds.
@@ -22,9 +22,7 @@ export default function About() {
                 <p className="text-sm md:text-base text-white">
                     Echoes of Thoughts is not just a blog it is a community. We encourage you to share your thoughts, engage in discussions, and connect with fellow readers. Together, we can build a vibrant and inclusive space where ideas are celebrated and minds are opened.
                 </p>
-            </div> */}
-
-            <h1>hi</h1>
+            </div>
         </div>
     );
 }
