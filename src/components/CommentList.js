@@ -2,7 +2,7 @@ import React from "react";
 
 const CommentList = ({ comments }) => {
   return (
-    <div className="mt-10 p-5 bg-red-200 rounded-md shadow-md w-full md:w-3/4 mx-auto">
+    <div className="mt-10 p-5 bg-red-200 rounded-md shadow-md w-full md:w-3/4 ">
       <h2 className="text-xl font-bold text-red-500 mb-4">Comments</h2>
       {comments && comments.length > 0 ? (
         comments.map((comment, index) => (

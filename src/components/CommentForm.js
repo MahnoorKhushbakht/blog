@@ -2,7 +2,7 @@ export default function CommentForm(){
     return(
     <form>  
         <div className="bg-red-200 rounded-md shadow-md">
-        <h1 className="text-xl  text-red-400 p-3 font-bold">Leave a Review</h1>
+        <h1 className="text-xl  text-red-500 p-3 font-bold">Leave a Review</h1>
         <div className="flex md:flex-row flex-col space-x-2 p-3">
         <div class="mb-4">
   <label class="block text-red-400 text-sm font-bold mb-2" for="username">
