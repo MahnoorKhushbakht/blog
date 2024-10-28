@@ -6,6 +6,8 @@ import { Button } from "@nextui-org/react";
 import ImgSuspense from "@/components/ImgSuspense";
 import { getBlog } from "@/lib/blogs";
 import ShareButton from "@/components/ShareButton";
+import CommentForm from "@/components/CommentForm";
+import CommentList from "@/components/CommentList";
 
 export default async function Details({ params: { slug,type } }) {
  
@@ -33,11 +35,19 @@ export default async function Details({ params: { slug,type } }) {
             </h1>
             <ShareButton/>
           </div>
-          <ScrollShadow hideScrollBar className="w-auto h-64">
+          <ScrollShadow hideScrollBar className="w-auto h-auto mb-3">
             <p className="text-red-400">{item.details}</p>
           </ScrollShadow>
+          <div className="mt-10">
+          <CommentList/>
+      </div>
+          <div className="mt-10">
+        <CommentForm />
+      </div>
         </div>
+        
       ))}
+  
     </div>
   );
 }
