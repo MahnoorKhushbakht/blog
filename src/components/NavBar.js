@@ -5,7 +5,7 @@ export default function App() {
   return (
     <header className="text-gray-600 body-font bg-red-300">
       <div className="container mx-auto flex justify-center items-center p-5">
-        <a className="flex title-font font-medium items-center">
+        <a className="flex title-font font-medium items-center" href="/">
           <Image
             src="/images/eot-logo.png"  
             alt="Your Alt Text"
