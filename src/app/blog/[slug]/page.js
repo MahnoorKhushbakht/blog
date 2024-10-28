@@ -24,9 +24,9 @@ export default async function Blog({ params: { slug } }) {
                             <span className="text-sm text-red-200">{item.date}</span>
                         </div>
                         <div className="md:flex-grow">
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+        
                             <h2 className="text-2xl font-medium text-white title-font mb-2">{item.subtitle}</h2>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+        
                             <p className="leading-relaxed text-white line-clamp-2">{item.details}</p>
                             <a className="text-white inline-flex items-center mt-4" href={`/details/${name}/${item.slug}`}>Learn More
                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
