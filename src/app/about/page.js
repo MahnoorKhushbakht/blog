@@ -20,7 +20,7 @@ export default function About() {
                 
                 <h2 className='text-lg md:text-xl antialiased font-bold text-red-100'>Join the Conversation:</h2>
                 <p className="text-sm md:text-base text-white">
-                    Echoes of Thoughts isn’t just a blog; it’s a community. We encourage you to share your thoughts, engage in discussions, and connect with fellow readers. Together, we can build a vibrant and inclusive space where ideas are celebrated and minds are opened.
+                    Echoes of Thoughts is not just a blog; it is a community. We encourage you to share your thoughts, engage in discussions, and connect with fellow readers. Together, we can build a vibrant and inclusive space where ideas are celebrated and minds are opened.
                 </p>
             </div>
         </div>
