@@ -1,3 +1,4 @@
+// Disabling the ESLint rule for specific lines
 import { Image } from "@nextui-org/react";
 import Background from '@/components/Background';
 import NextImage from "next/image";
