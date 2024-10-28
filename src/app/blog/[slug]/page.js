@@ -24,10 +24,8 @@ export default async function Blog({ params: { slug } }) {
                             <span className="text-sm text-red-200">{item.date}</span>
                         </div>
                         <div className="md:flex-grow">
-                            {/* Disable the ESLint rule for this line */}
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h2 className="text-2xl font-medium text-white title-font mb-2">{item.subtitle}</h2>
-                            {/* Disable the ESLint rule for this line */}
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <p className="leading-relaxed text-white line-clamp-2">{item.details}</p>
                             <a className="text-white inline-flex items-center mt-4" href={`/details/${name}/${item.slug}`}>Learn More
