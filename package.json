@@ -21,6 +21,7 @@
     "framer-motion": "^11.5.6",
     "marked": "^14.1.2",
     "meilisearch": "^0.44.1",
+    "mongoose": "^8.7.3",
     "next": "^14.2.13",
     "qs": "^6.13.0",
     "react": "^18",
