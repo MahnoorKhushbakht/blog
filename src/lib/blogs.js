@@ -100,30 +100,36 @@ export async function getCategories(){
 // }
 // https://strapicms-production-f0e2.up.railway.app/api/bloggs?categories=food
 
-export async function getCategory(slug){
-    const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
-    const url = `${CMS_URL}/api/${slug}?` + qs.stringify({
-        fields: ['slug', 'title', 'publishedAt', 'details','subtitle'],
-        populate: { image: { fields: ['url'] }},
-        sort: ['publishedAt:desc'],
-        pagination: { pageSize: 6 },
-    }, { encodeValuesOnly: true });
+export async function getCategory(slug, page = 1) {
+  const CMS_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
+  const url = `${CMS_URL}/api/${slug}?` + qs.stringify({
+      fields: ['slug', 'title', 'publishedAt', 'details', 'subtitle'],
+      populate: { image: { fields: ['url'] } },
+      sort: ['publishedAt:desc'],
+      pagination: { page, pageSize: 2 },
+  }, { encodeValuesOnly: true });
 
-    const response = await fetch(url, {
-        next: { revalidate: 10 },
-      });
-    const json = await response.json(); 
-    const { data } = json; 
-    console.log('data',data)
-    return data.map((blog) => ({
-        id: blog.id,
-        slug: blog.slug,
-        title: blog.title,
-        subtitle: blog.subtitle,
-        details: blog.details, 
-        date: blog.publishedAt.slice(0, 'yyyy-mm-dd'.length),
-        image: CMS_URL + blog.image.url,
-    }));
+  const response = await fetch(url, {
+      next: { revalidate: 10 },
+  });
+
+  const json = await response.json();
+  const { data, meta } = json; 
+
+  console.log('data', data);
+
+  return {
+      blogs: data.map((blog) => ({
+          id: blog.id,
+          slug: blog.slug,
+          title: blog.title,
+          subtitle: blog.subtitle,
+          details: blog.details,
+          date: blog.publishedAt.slice(0, 'yyyy-mm-dd'.length),
+          image: CMS_URL + blog.image.url,
+      })),
+      totalCount: meta?.pagination?.total || 0, 
+  };
 }
 
 

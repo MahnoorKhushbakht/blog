@@ -7,8 +7,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({ email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
-  const [statusType, setStatusType] = useState(''); // 'success' or 'error'
-
+  const [statusType, setStatusType] = useState(''); 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
