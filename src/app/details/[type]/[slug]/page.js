@@ -14,7 +14,7 @@ export default async function Details({ params: { slug,type } }) {
   const data = await getBlog(slug,type);
 
   return (
-    <div className="min-w-svw min-h-svh bg-red-100 grid grid-cols-1 p-10">
+    <div className="min-w-svw min-h-full bg-red-100 grid grid-cols-1 p-10">
       {data.map((item, index) => (
         <div key={index}>
           <Suspense fallback={<ImgSuspense />}>
@@ -35,7 +35,7 @@ export default async function Details({ params: { slug,type } }) {
             </h1>
             <ShareButton/>
           </div>
-          <ScrollShadow hideScrollBar className="w-auto h-auto mb-3">
+          <ScrollShadow hideScrollBar className="w-auto md:h-auto sm:h-[400px] mb-3">
             <p className="text-red-400">{item.details}</p>
           </ScrollShadow>
           <div className="mt-10">
