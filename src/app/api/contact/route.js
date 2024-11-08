@@ -1,5 +1,5 @@
 import { Contact } from "@/utils/models/Schema";
-import dbConnect from "@/lib/db";
+import dbConnect from "@/lib/mongo-connect";
 import { redirect } from 'next/navigation'
 
 import { NextRequest, NextResponse } from 'next/server';

@@ -1,18 +1,15 @@
-import mongoose from 'mongoose';
+import { PrismaClient } from '@prisma/client';
 
-const uri = process.env.NEXT_PUBLIC_DB_URL;
 
-async function dbConnect() {
-  if (mongoose.connection.readyState) {
-    return;
+export const db = createPrismaClient();
+
+
+/** @returns {PrismaClient} */
+function createPrismaClient() {
+  if (!globalThis.prismaClient) {
+    globalThis.prismaClient = new PrismaClient({
+      // log: [{ emit: 'stdout', level: 'query' }],
+    });
   }
-
-  try {
-    await mongoose.connect(uri);
-    console.log('Connected to MongoDB');
-  } catch (error) {
-    console.error('MongoDB connection error:', error);
-  }
+  return globalThis.prismaClient;
 }
-
-export default dbConnect;

@@ -35,14 +35,14 @@ export default async function Details({ params: { slug,type } }) {
             </h1>
             <ShareButton/>
           </div>
-          <ScrollShadow hideScrollBar className="w-auto md:h-auto sm:h-[400px] mb-3">
+          <ScrollShadow hideScrollBar className="w-auto md:h-auto sm:h-[200px] mb-3">
             <p className="text-red-400">{item.details}</p>
           </ScrollShadow>
           <div className="mt-10">
-          <CommentList/>
+          <CommentList slug={slug}/>
       </div>
           <div className="mt-10">
-        <CommentForm />
+        <CommentForm slug={slug} type={type} title={item.title}  />
       </div>
         </div>
         
