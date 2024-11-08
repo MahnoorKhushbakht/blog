@@ -23,7 +23,7 @@ export default function ShareButton() {
       <Button
         isIconOnly
         aria-label="Share"
-        className="ml-2 bg-red-300"
+        className="bg-transparent"
         onPress={handleShare} 
       >
         <svg

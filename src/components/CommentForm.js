@@ -22,8 +22,8 @@ export default function CommentForm({slug,title,type}){
   }  
   return(
     <form onSubmit={handleSubmit}>  
-        <div className="bg-red-200 rounded-md shadow-md">
-        <h1 className="text-xl  text-red-500 p-3 font-bold">{`Leave a Review for ${title}`}</h1>
+        <div className="bg-red-200 rounded-md shadow-md w-full md:w-3/4 ">
+        <h1 className="text-xl  text-red-500 p-3 font-bold">Leave a Review for <span className="font-bold uppercase text-red-600">{title}</span></h1>
         <div className="flex md:flex-row flex-col space-x-2 p-3">
         <div class="mb-4">
         <input type="hidden" name="slug" value={slug} />
@@ -32,7 +32,7 @@ export default function CommentForm({slug,title,type}){
     Name
   </label>
   <input
-    // required maxLength={50}
+    required maxLength={50}
     type="text"
     id="Name"
     name="user"
@@ -47,7 +47,7 @@ export default function CommentForm({slug,title,type}){
   <textarea
     required maxLength={500}
     id="message"
-    rows="4"
+    rows="2"
     name="message"
     placeholder="Enter your message"
     class="border border-red-400 text-white bg-red-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white placeholder-white transition duration-300 ease-in-out transform hover:scale-105"
