@@ -4,12 +4,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Comment {
-  id       String   @id @default(uuid())
+   id        String   @id @default(auto()) @map("_id") @db.ObjectId // MongoDB ObjectId
   slug     String   // same as Review.slug in Strapi
   user     String
   type     String
