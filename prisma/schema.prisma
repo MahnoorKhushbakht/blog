@@ -9,10 +9,10 @@ datasource db {
 }
 
 model Comment {
-  id       String   @id @default(uuid())
-  slug     String   // same as Review.slug in Strapi
-  user     String
-  type     String
-  message  String
-  postedAt DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  slug      String
+  user      String
+  message   String
+  type      String
+  postedAt  DateTime @default(now())
 }
