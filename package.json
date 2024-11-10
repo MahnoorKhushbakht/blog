@@ -25,6 +25,7 @@
     "meilisearch": "^0.44.1",
     "mongoose": "^8.7.3",
     "next": "^14.2.13",
+    "pg": "^8.13.1",
     "qs": "^6.13.0",
     "react": "^18",
     "react-card-flip": "^1.2.3",
