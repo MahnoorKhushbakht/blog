@@ -9,13 +9,13 @@ export async function createComment({ slug, user, message, type }) {
         user,
         message,
         type,
-        postedAt: new Date(), // Only if needed; PostgreSQL can handle timestamps automatically if set as a default.
+        postedAt: new Date(), 
       },
     });
     return comment;
   } catch (error) {
     console.error("Error creating comment:", error);
-    throw error; // Rethrow the error for error handling in higher-level code
+    throw error; 
   }
 }
 
@@ -23,11 +23,11 @@ export async function getComments(slug) {
   try {
     const comments = await db.comment.findMany({
       where: { slug },
-      orderBy: { postedAt: 'desc' }, // Ensure `postedAt` exists in your schema
+      orderBy: { postedAt: 'desc' }, 
     });
     return comments || [];  
   } catch (error) {
     console.error("Error fetching comments:", error);
-    return []; // Returns an empty array in case of an error
+    return []; 
   }
 }
