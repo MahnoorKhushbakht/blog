@@ -1,6 +1,7 @@
 import { db } from './db';
-console.log({ slug, user, message, type });
+
 export async function createComment({ slug, user, message, type }) {
+  console.log({ slug, user, message, type });
   try {
     const comment = await db.comment.create({
       data: {
