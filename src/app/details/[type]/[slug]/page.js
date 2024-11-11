@@ -7,6 +7,7 @@ import { getBlog } from "@/lib/blogs";
 import ShareButton from "@/components/ShareButton";
 import CommentForm from "@/components/CommentForm";
 import CommentList from "@/components/CommentList";
+import ProgressBar from "@/components/ProgressBar";
 
 export default async function Details({ params: { slug,type } }) {
  
@@ -14,6 +15,7 @@ export default async function Details({ params: { slug,type } }) {
 
   return (
     <div className="min-w-svw min-h-full bg-red-100 grid grid-cols-1 p-10">
+      <ProgressBar/>
       {data.map((item, index) => (
         <div key={index}>
           <Suspense fallback={<ImgSuspense />}>

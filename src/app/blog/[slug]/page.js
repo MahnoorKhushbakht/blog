@@ -1,3 +1,4 @@
+import ProgressBar from "@/components/ProgressBar";
 import { getCategory } from "@/lib/blogs";
 import Link from 'next/link';
 
@@ -20,6 +21,7 @@ export default async function Blog({ params: { slug }, searchParams }) {
 
     return (
         <div className='bg-red-400 grid grid-cols-1 grid-rows-3 min-h-screen min-w-full md:p-0 p-10 place-content-center place-items-center'>
+            <ProgressBar/>
             {data.map((item) => (
                 <section key={item.id} className="w-full sm:w-auto md:w-3/4 mx-0 h-auto text-gray-600 md:ml-20 ml-0 md:mr-10 mr-0 body-font overflow-hidden">
                     <div className="py-8 flex flex-wrap md:flex-nowrap">

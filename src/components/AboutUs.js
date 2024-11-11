@@ -28,7 +28,7 @@ export default function AboutUs() {
                         </Link>
                     </div>
                 </div>
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full sm:w-[75%] md:w-[60%]">
                     <Image
                         isBlurred
                         alt="Our Team"
