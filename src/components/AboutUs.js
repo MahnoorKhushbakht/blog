@@ -17,12 +17,12 @@ export default function AboutUs() {
                     </p>
                     <div className="flex justify-center">
                         <Link href="/about" passHref>
-                            <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded sm:text-base text-lg">
+                            <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded sm:text-base text-lg">
                                About Us
                             </button>
                         </Link>
                         <Link href="/contact" passHref>
-                            <button className="ml-4 inline-flex text-red-500 bg-red-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded sm:text-base text-lg">
+                            <button className="ml-4 inline-flex text-red-500 bg-red-100 border-0 py-2 px-6 focus:outline-none hover:bg-red-200 rounded sm:text-base text-lg">
                                 Contact Us
                             </button>
                         </Link>

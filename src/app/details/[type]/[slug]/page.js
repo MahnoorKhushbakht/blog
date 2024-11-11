@@ -42,10 +42,9 @@ export default async function Details({ params: { slug,type } }) {
           <h1 className="text-base text-red-600 italic font-bold">
             {item.subtitle}
             </h1>
-          <ScrollShadow hideScrollBar className="w-auto md:h-auto sm:h-[200px] mb-3">
+            <ScrollShadow hideScrollBar className="w-full md:h-40 sm:h-auto h-24 overflow-y-auto mb-3">
             <p className="text-red-400">{item.details}</p>
-          </ScrollShadow>
-
+        </ScrollShadow>
           <div className="mt-10">
         <CommentForm slug={slug} type={type} title={item.title}  />
       </div>
