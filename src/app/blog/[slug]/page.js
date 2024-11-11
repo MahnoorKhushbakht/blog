@@ -30,9 +30,9 @@ export default async function Blog({ params: { slug }, searchParams }) {
                             <span className="text-sm text-red-200">{item.date}</span>
                         </div>
                         <div className="md:flex-grow">
-                            <h2 className="text-2xl font-medium text-red-600 title-font mb-2">{item.subtitle}</h2>
+                            <h2 className="text-2xl font-medium text-red-200 title-font mb-2">{item.subtitle}</h2>
                             <p className="leading-relaxed text-white line-clamp-2">{item.details}</p>
-                            <Link href={`/details/${slug}/${item.slug}`} className="text-white hover:text-red-500 inline-flex items-center mt-4">
+                            <Link href={`/details/${slug}/${item.slug}`} className="text-red-100 inline-flex items-center mt-4">
                                 Learn More
                                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>
