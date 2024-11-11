@@ -17,18 +17,18 @@ export default function AboutUs() {
                     </p>
                     <div className="flex justify-center">
                         <Link href="/about" passHref>
-                            <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">
+                            <button className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded sm:text-base text-lg">
                                About Us
                             </button>
                         </Link>
                         <Link href="/contact" passHref>
-                            <button className="ml-4 inline-flex text-red-500 bg-red-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                            <button className="ml-4 inline-flex text-red-500 bg-red-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded sm:text-base text-lg">
                                 Contact Us
                             </button>
                         </Link>
                     </div>
                 </div>
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full sm:w-[75%] md:w-[60%]">
+                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full sm:w-[50%] sm:h-[30%] md:w-[60%]">
                     <Image
                         isBlurred
                         alt="Our Team"
