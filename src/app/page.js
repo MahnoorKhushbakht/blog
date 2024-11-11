@@ -1,6 +1,8 @@
 'use client'
+import AboutUs from '@/components/AboutUs';
 import Background from '@/components/Background'
 import CardInfo from '@/components/CardInfo';
+import Quote from '@/components/Quote';
 import SearchInput from '@/components/SearchInput';
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
         <h1 className="md:text-2xl underline underline-offset-2 hover:decoration-4 justify-items-center text-red-100 antialiased md:ml-10 ml-3 mr-3 md:mr-10 text-xl">It is a space for curious minds and thoughtful souls. We explore a range of topics, from personal reflections and lifestyle tips to travel stories and insightful observations. Join us as we share ideas, inspire conversations, and celebrate the beauty of everyday life.</h1>
       <CardInfo/>
       {/* <SearchInput/> */}
+      <AboutUs/>
+      <Quote/>
       </main>
     </div>
   );
