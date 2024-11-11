@@ -31,7 +31,7 @@ export default function CommentForm({ slug, title, type }) {
 
         <div className="flex flex-col md:flex-row md:space-x-1 p-2">
          
-          <div className="mb-4 w-3/6 md:w-auto"> 
+          <div className="mb-4 w-full md:w-auto"> 
             <input type="hidden" name="slug" value={slug} />
             <input type="hidden" name="type" value={type} />
             <label className="block text-red-400 text-sm font-bold mb-2" htmlFor="username">
@@ -49,7 +49,7 @@ export default function CommentForm({ slug, title, type }) {
           </div>
 
           
-          <div className="mb-4 w-5/6 md:w-2/3"> 
+          <div className="mb-4 w-full md:w-2/3"> 
             <label className="block text-red-400 text-sm font-bold mb-2" htmlFor="message">
               Message
             </label>
