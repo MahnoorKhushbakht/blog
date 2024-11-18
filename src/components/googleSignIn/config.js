@@ -2,13 +2,13 @@ import { initializeApp, getApps } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDt-0gijiFRJl1mtsfQ_LeXAjOzsf7bF1o",
-  authDomain: "blog-website-66e03.firebaseapp.com",
-  projectId: "blog-website-66e03",
-  storageBucket: "blog-website-66e03.appspot.com",
-  messagingSenderId: "734745233252",
-  appId: "1:734745233252:web:3efe7e371dd5d86c11dc71",
-  measurementId: "G-RY0FRNDXG5"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain ,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket ,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
+  measurementId: process.env.measurementId
 };
 
 // Check if Firebase is already initialized
