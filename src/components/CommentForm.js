@@ -34,7 +34,7 @@ export default function CommentForm({ slug, title, type }) {
           <div className="mb-4 w-full md:w-auto"> 
             <input type="hidden" name="slug" value={slug} />
             <input type="hidden" name="type" value={type} />
-            <label className="block text-red-400 text-sm font-bold mb-2" htmlFor="username">
+            <label className="block text-red-400 text-sm font-bold mb-2" htmlFor="name">
               Name
             </label>
             <input
