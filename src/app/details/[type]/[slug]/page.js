@@ -1,6 +1,7 @@
 import { Image } from "@nextui-org/react";
 import NextImage from "next/image";
 import { Suspense } from 'react';
+import {user} from '@/components/googleSignIn/config'
 import { ScrollShadow } from "@nextui-org/react";
 import ImgSuspense from "@/components/ImgSuspense";
 import { getBlog } from "@/lib/blogs";
@@ -10,7 +11,8 @@ import CommentList from "@/components/CommentList";
 import ProgressBar from "@/components/ProgressBar";
 
 export default async function Details({ params: { slug,type } }) {
- 
+  
+
   const data = await getBlog(slug,type);
 
   return (
@@ -45,8 +47,16 @@ export default async function Details({ params: { slug,type } }) {
             <ScrollShadow hideScrollBar className="w-full md:h-40 sm:h-auto h-80 overflow-y-auto mb-3">
             <p className="text-red-400">{item.details}</p>
         </ScrollShadow>
-          <div className="mt-10">
-        <CommentForm slug={slug} type={type} title={item.title}  />
+          <div className="mt-10"> {user ? (
+              // Show Comment Form if the user is logged in
+              <CommentForm slug={slug} type={type} title={item.title} />
+            ) : (
+              <div className="bg-red-200  mb-10 rounded-md shadow-md w-full md:w-3/4">
+              <h1 className="text-xl text-red-500 p-3 font-bold">
+                <a href="/sign-in" className="text-red-300">Sign In</a> to Comment
+              </h1>
+              </div>
+            )}  <CommentForm slug={slug} type={type} title={item.title}  />
       </div>
       <div className="mt-10">
           <CommentList slug={slug}/>

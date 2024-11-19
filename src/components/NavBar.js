@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function NavBar() {
   const [value, setValue] = useState('');
-  console.log('value:',value)
+  
   useEffect(() => {
     setValue(localStorage.getItem('email'));
   }, []);

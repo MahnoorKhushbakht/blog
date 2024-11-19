@@ -24,6 +24,7 @@ if (!getApps().length) {
 }
 
 const auth = getAuth(app);
+const user = auth.currentUser; // Check the current user directly
 const provider = new GoogleAuthProvider();
 
-export { auth, provider };
+export { auth, provider,user };
