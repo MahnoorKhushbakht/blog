@@ -25,7 +25,7 @@ export default function Quote() {
 
     return (
         <div className='min-w-full min-h-svh flex items-center'>
-        <Background/>
+        {/* <Background/> */}
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap -m-4">
