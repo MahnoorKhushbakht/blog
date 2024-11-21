@@ -1,17 +1,30 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { auth } from "./googleSignIn/config"; 
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 export default function NavBar() {
-  const [value, setValue] = useState('');
-  
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
-    setValue(localStorage.getItem('email'));
+ 
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); 
+    });
+
+   
+    return () => unsubscribe();
   }, []);
 
-  const handleSignOut = () => {
-    localStorage.removeItem('email');
-    setValue(''); 
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth); 
+      setUser(null); 
+      console.log("User signed out successfully");
+    } catch (error) {
+      console.error("Error signing out:", error.message);
+    }
   };
 
   return (
@@ -20,7 +33,7 @@ export default function NavBar() {
         <a className="flex title-font font-medium items-center" href="/">
           <Image
             src="/images/eot-logo.png"
-            alt="Your Alt Text"
+            alt="Echoes of Thought Logo"
             width={40}
             height={40}
             className="rounded-full bg-white"
@@ -29,7 +42,7 @@ export default function NavBar() {
             Echoes of Thought
           </span>
         </a>
-        {value ? (
+        {user ? (
           <button
             onClick={handleSignOut}
             className="text-red-500 bg-red-100 hover:bg-red-500 hover:text-red-100 py-2 px-4 rounded-md text-lg"
