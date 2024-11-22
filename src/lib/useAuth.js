@@ -19,7 +19,7 @@ export const Auth = ({ children }) => {
       {user ? (
         <>{children}</> 
       ) : (
-        <div className="bg-red-200  mb-10 rounded-md shadow-md w-full md:w-3/4">
+        <div className="bg-red-200 rounded-md shadow-md w-full md:w-3/4">
         <h1 className="text-xl text-red-500 p-3 font-bold">
           <a href="/sign-in" className="text-red-300">Sign In</a> to Comment
         </h1>

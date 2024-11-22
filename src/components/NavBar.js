@@ -28,7 +28,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="text-gray-600 body-font bg-red-300 fixed top-0 w-full z-50">
+<header className="sticky top-0 w-full text-gray-600 body-font bg-red-300 shadow-md z-10">
       <div className="container mx-auto flex justify-between items-center p-5">
         <a className="flex title-font font-medium items-center" href="/">
           <Image
