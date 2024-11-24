@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import { auth } from '@/components/googleSignIn/config';  // Adjust path if needed
+import { auth } from '@/components/googleSignIn/config';  
 import { onAuthStateChanged } from 'firebase/auth';
 
 export const Auth = ({ children }) => {

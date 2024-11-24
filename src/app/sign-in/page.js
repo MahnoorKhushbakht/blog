@@ -8,6 +8,7 @@ import Alert from '@mui/material/Alert';
 export default function SignIn() {
   const [value, setValue] = useState('');
   const [password, setPassword] = useState('');
+  const [alertVisible, setAlertVisible] = useState(true)
   const [email, setEmail] = useState('');
   const [alert, setAlert] = useState({ message: '', severity: '' });
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function SignIn() {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         setAlert({ message: 'Login Successful!', severity: 'success' });
+        setAlertVisible(true)
         setTimeout(() => {
           router.push('/');
         }, 2000); 
@@ -23,6 +25,7 @@ export default function SignIn() {
       .catch((error) => {
         console.error('Error signing in:', error);
         setAlert({ message: 'Login failed. Please check your credentials.', severity: 'error' });
+        setAlertVisible(true)
       });
   };
 
@@ -32,6 +35,7 @@ export default function SignIn() {
         setValue(data.user.email);
         localStorage.setItem('email', data.user.email);
         setAlert({ message: 'Google Sign-In Successful!', severity: 'success' });
+        setAlertVisible(true)
         setTimeout(() => {
           router.push('/');
         }, 2000); 
@@ -39,6 +43,7 @@ export default function SignIn() {
       .catch((error) => {
         console.error('Error signing in with Google:', error);
         setAlert({ message: 'Google Sign-In failed. Please try again.', severity: 'error' });
+        setAlertVisible(true)
       });
   };
 
@@ -55,8 +60,8 @@ export default function SignIn() {
       <div className="w-full max-w-md bg-red-300 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-white mb-6 text-center">Sign In</h2>
 
-        {alert.message && (
-          <Alert variant="filled" severity={alert.severity} className="mb-4">
+        {alert.message && alertVisible && (
+          <Alert variant="filled" severity={alert.severity} className="mb-4" onClose={() => setAlertVisible(false)}>
             {alert.message}
           </Alert>
         )}

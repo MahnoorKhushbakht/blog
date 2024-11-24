@@ -7,9 +7,10 @@ import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/
 
 export default function SignIn() {
   const [password, setPassword] = useState('');
-  const [confirmPassword, setconfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const [alertSeverity, setAlertSeverity] = useState('success');
+  const [alertVisible, setAlertVisible] = useState(false); 
   const [email, setEmail] = useState('');
   const router = useRouter();
 
@@ -17,8 +18,10 @@ export default function SignIn() {
     if (password !== confirmPassword) {
       setAlertMessage('Passwords do not match!');
       setAlertSeverity('error');
+      setAlertVisible(true); 
       return;
     }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -27,16 +30,19 @@ export default function SignIn() {
           .then(() => {
             setAlertMessage('Sign-Up Successful! Please check your email to verify your account.');
             setAlertSeverity('success');
+            setAlertVisible(true); 
             router.push('/sign-in');
           })
           .catch((error) => {
-            setAlertMessage('Error sending email verification:', error);
+            setAlertMessage(`Error sending email verification: ${error.message}`);
             setAlertSeverity('error');
+            setAlertVisible(true); 
           });
       })
       .catch((error) => {
-        setAlertMessage('Error signing up:', error.message);
+        setAlertMessage(`Error signing up: ${error.message}`);
         setAlertSeverity('error');
+        setAlertVisible(true); 
       });
   };
 
@@ -44,8 +50,8 @@ export default function SignIn() {
     <div className="flex justify-center items-center bg-red-200 min-h-screen px-4">
       <div className="w-full max-w-md bg-red-300 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-white mb-6">Sign Up</h2>
-        {alertMessage && (
-          <Alert variant="filled" severity={alertSeverity} className="mb-4">
+        {alertMessage && alertVisible && (
+          <Alert variant="filled" severity={alertSeverity} className="mb-4" onClose={() => setAlertVisible(false)}>
             {alertMessage}
           </Alert>
         )}
@@ -90,12 +96,12 @@ export default function SignIn() {
             className="border border-red-400 text-white bg-red-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-white placeholder-white transition duration-300 ease-in-out transform hover:scale-105 w-full"
             required
             maxLength={50}
-            type="Password"
+            type="password"
             id="confirmPassword"
             name="confirmPassword"
             placeholder="Re-type Password"
             value={confirmPassword}
-            onChange={(e) => setconfirmPassword(e.target.value)}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
 
