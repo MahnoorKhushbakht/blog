@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['strapicms-production-f0e2.up.railway.app'],
+    domains: ['cms-strapi-sm20.onrender.com'],
   },
 };
 
