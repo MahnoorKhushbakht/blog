@@ -6,8 +6,29 @@ import ImgSuspense from "@/components/ImgSuspense";
 import Link from 'next/link';
 
 
-export default async function CardInfo() {
-  const cardData = await getCategories();
+export default function CardInfo() {
+  // const cardData = await getCategories();
+
+  const cardData = [
+    {
+      name: "Tech",
+      slug: "tech",
+      highlight: "Explore latest tech trends",
+      image: "/images/tech.jpg"
+    },
+    {
+      name: "Design",
+      slug: "design",
+      highlight: "Creative design insights",
+      image: "/images/design.jpg"
+    },
+    {
+      name: "Marketing",
+      slug: "marketing",
+      highlight: "Boost your marketing strategy",
+      image: "/images/marketing.jpg"
+    }
+  ];
   
   return (
     <>
