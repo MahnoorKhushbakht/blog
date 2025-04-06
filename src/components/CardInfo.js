@@ -32,7 +32,7 @@ export default function CardInfo() {
   
   return (
     <>
-      <div className="w-auto md:h-80 h-auto md:grid hidden md:grid-cols-3 grid-cols-1 gap-5 mt-20">
+      <div className="w-auto md:h-80 h-auto md:grid hidden md:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-5 mt-20">
         {cardData.map((item, index) => (
           <CardFlip
             key={index}

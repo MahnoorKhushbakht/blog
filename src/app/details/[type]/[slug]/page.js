@@ -13,6 +13,7 @@ import { Auth } from "@/lib/useAuth";
 const staticDetails = {
   tech: {
     "ai-revolution": {
+      slug: "ai-revolution",
       title: "AI Revolution",
       date: "2024-09-15",
       subtitle: "How AI is transforming everything",
@@ -20,6 +21,7 @@ const staticDetails = {
       image: "/images/ai.jpg",
     },
     "quantum-leap": {
+      slug: "quantum-leap",
       title: "Quantum Leap",
       date: "2024-08-20",
       subtitle: "Exploring quantum computing",
@@ -29,6 +31,7 @@ const staticDetails = {
   },
   design: {
     "minimalism-matters": {
+      slug: "minimalism-matters",
       title: "Minimalism Matters",
       date: "2024-09-10",
       subtitle: "Less is more in design",
@@ -36,6 +39,7 @@ const staticDetails = {
       image: "/images/minimalism.jpg",
     },
     "color-theory-101": {
+      slug: "color-theory-101",
       title: "Color Theory 101",
       date: "2024-08-25",
       subtitle: "Mastering the color wheel",
@@ -45,6 +49,7 @@ const staticDetails = {
   },
   marketing: {
     "seo-hacks": {
+      slug: "seo-hacks",
       title: "SEO Hacks",
       date: "2024-09-05",
       subtitle: "Boost your site's visibility",
@@ -52,6 +57,7 @@ const staticDetails = {
       image: "/images/seo.jpg",
     },
     "social-psych": {
+      slug: "social-psych",
       title: "Social Media Psychology",
       date: "2024-08-18",
       subtitle: "The human side of marketing",
